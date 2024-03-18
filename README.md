@@ -10,7 +10,7 @@ Supports any desktop OS
 - Install Java at least version 8
 - Create your workspace directory, example `mkdir ~/apk_patching` and `cd ~/apk_patching`
 - Download [uber-apk-signer](https://github.com/patrickfav/uber-apk-signer/releases) and place into your workspace directory
-- Generating keypair once:
+- Generate keypair once:
   - Run command in your workspace `keytool -genkeypair -v -keystore keystore.jks -keyalg RSA -keysize 2048 -validity 3650 -alias app`
   - Enter keystore password: `123456`
   - Then press **Enter**/**Return** many times until this utility asks something like this `Is CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct?`
@@ -18,8 +18,8 @@ Supports any desktop OS
 - Put your apk file into your workspace and name it `app.apk`
 - Run command in your workspace `apktool d -o app app.apk`
 - Modify anything that you want in `app` directory
-- Run command in your workspace `apktool b app --use-aapt2 -o app_patched.apk`
-- Run command in your workspace `java -jar uber-apk-signer-1.3.0.jar -a app_patched.apk --ks keystore.jks --ksAlias app --ksKeyPass 123456 --ksPass 123456 -o output`
+- Run command in your workspace `apktool b app --use-aapt2 -o app-patched.apk`
+- Run command in your workspace `java -jar uber-apk-signer-1.3.0.jar -a app-patched.apk --ks keystore.jks --ksAlias app --ksKeyPass 123456 --ksPass 123456 -o output`
 
 ## License
 
